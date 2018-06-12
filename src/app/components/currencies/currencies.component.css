@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Currencies__grid {
+  width: 700px;
+}
+
+.Currency__details {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+@media (max-width: 640px) {
+  .Currencies__grid {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .Currencies__grid {
+    width: 500px;
+  }
+}
+
+.Currencies__element {
+  border: 2px solid;
+  margin-left: 10px;
+}
+
+.Currencies__paginator {
+  margin-top: 15px;
+}

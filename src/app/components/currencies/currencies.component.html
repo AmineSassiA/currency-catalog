@@ -1,0 +1,33 @@
+<h1>Available currencies</h1>
+<mat-grid-list [cols]="cols" rowHeight="80px" class="Currencies__grid">
+  <mat-grid-tile
+    [routerLink]="'/currency/' + currency.id"
+    class="Currencies__element"
+    *ngFor="let currency of currencies"
+    colspan="1"
+    rowspan="1">
+    <div class="Currency__details">
+      <span>ID:{{currency.id}}</span>&nbsp;&nbsp;
+      <span>Type:{{currency.attributes.currency_type}}</span>&nbsp;&nbsp;
+      <span>Symbol:{{currency.attributes.native_symbol}}</span>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<br/>
+
+<div class="btn-group mr-3" >
+  <select id="PerPage" class="form-control" [(ngModel)]="pageSize" (change)="setPageSize()">
+    <option>10</option>
+    <option>50</option>
+    <option>100</option>
+  </select>
+
+  <!-- Using a server side pagination -->
+  <ngb-pagination
+    [collectionSize]="totalItems"
+    [(page)]="page"
+    [boundaryLinks]="true"
+    (pageChange)="getPage($event)"></ngb-pagination>
+</div>
+
